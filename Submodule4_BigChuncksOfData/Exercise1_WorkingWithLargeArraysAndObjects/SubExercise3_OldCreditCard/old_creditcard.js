@@ -18,57 +18,86 @@
     Read here about how to get the current date. Your script should also work properly in 2 months.
 */
 
+
+
+
+
 const customSelectedPeople = peopleData => {
     const date = new Date();
     const currentYear = Number(date.getFullYear().toString().substring(2));
     // log('current year', currentYear, typeof currentYear);
     const currentMonth = date.getMonth();
     // log('current month', currentMonth, typeof currentMonth);
-    const nexYear = currentYear + 1;
+    const nextYear = currentYear + 1;
     let counter = 0;
     let cc_exp_year = null;
     let cc_exp_month = null;
-    let newMatches = []
-    let newPeopleData = null;
     return peopleData
             .filter(person => person.age >= 18)
             .filter(person => {
                 cc_exp_year = Number(person.credit_card.expiration.split('/')[1])
                 cc_exp_month = Number(person.credit_card.expiration.split('/')[0])
-                if(currentYear <= cc_exp_year && cc_exp_year <= (nexYear) ){
+                if(currentYear <= cc_exp_year && cc_exp_year <= (nextYear) ){
                     counter++
-                    if(cc_exp_year == currentYear && cc_exp_month > currentMonth){
-                        // log(`cc_exp_year == currentYear:`, cc_exp_year == currentYear, cc_exp_year);
-                        // log(`cc_exp_month > currentMonth:`, cc_exp_month > currentMonth, cc_exp_month);
-                        // log(`cardYear ${cc_exp_year}, cardMonth ${cc_exp_month}`);
-                        // newMatches = [...newMatches, cc]
+                    if(cc_exp_year == currentYear && cc_exp_month >= currentMonth){
                         person.exp_month = cc_exp_month;
-                        // cc_exp_month = cc_exp_month
-                        log('Person type of exp_month', typeof person.exp_month)
+                        person.exp_year = cc_exp_year;
+                        return person
+                    } 
+                    if(cc_exp_year == nextYear && cc_exp_month <= currentMonth){
+                        person.exp_month = cc_exp_month;
+                        person.exp_year = cc_exp_year;
                         return person
                     } 
                 }
             })      
-            // .map(person => [...newMatches, person.name, person.credit_card.expiration, person.exp_month])      
-            // .map(person => [...newMatches, person.name, person.credit_card.expiration, person.exp_month])
-            
 }
 
-// objs.sort((a,b) => (a.last_nom > b.last_nom) ? 1 : ((b.last_nom > a.last_nom) ? -1 : 0))
 
-// log('testing results of customSelectedPeople function:\n', customSelectedPeople(randomPersonData));
+/* const sortOnExpirationYear = (card1, card2) => {
+    if(card1.exp_year > card2.exp_year) {   //als jaar card1=23 > card2=22
+        // if(card1.exp_month > card2.exp_month)  // als maand card1=12 > card2=7
+            return 1
+    }else {
+        if(card1.exp_year < card2.exp_year) //als jaar card2=22 < card1=23
+            // if(card1.exp_month > card2.exp_month)// als maand card2= 7 < card1=12
+                return -1
+    }
+}; */
 
-const resultOfSelection = customSelectedPeople(randomPersonData);
-log(`UnSorted -> resultOfSelection:`, resultOfSelection);
+let sortedByYear = []
+let sortedByMonth = []
+const sortOnExpirationMonth = (card1, card2) => {
+    // if(card1.exp_year > card2.exp_year) {   //als jaar card1=23 > card2=22
+    if(card1.exp_year > card2.exp_year ) 
+    {   
+        // let sortedByYear = [...sortedByYear, ]
+        log('-----------------if gedeelte --------------------------')
+        if(card1.exp_month < card2.exp_month )
+            // log(`card1.exp_year: ${card1.exp_year} card2.exp_year: ${card2.exp_year}`+
+            //     `\ncard1.exp_month: ${card1.exp_month} card2.exp_month: ${card2.exp_month}`)
+        return 1
+    } else return -1
+        
+/*     else {
+        
+        log('-----------------else gedeelte --------------------------')
+        log(`card1.exp_year: ${card1.exp_year} card2.exp_year: ${card2.exp_year}
+card1.exp_month: ${card1.exp_month} card2.exp_month: ${card2.exp_month}`)
+        return -1
+    } */
+    
+};
 
+// customSelectedPeople(randomPersonData).sort(sortOnExpirationMonth);
 
-const sortOnExpirationDate = (card1, card2) => card1.exp_month < card2.exp_month ? 1 : -1;
+const sortedDataMonth = customSelectedPeople(randomPersonData).sort(sortOnExpirationMonth);
+log(sortedDataMonth.forEach(i=>log(`year: ${i.exp_year}. month: ${i.exp_month}`)))
 
-log(`Sorted -> resultOfSelection:`, resultOfSelection.sort(sortOnExpirationDate));
 
 
 const renderToPage = (...selectedPeople) => {
-    log('selectedPeople', selectedPeople)
+    // log('selectedPeople', selectedPeople)
     selectedPeople.forEach(person => {
      
         const persContainer = document.createElement('div');
@@ -114,5 +143,5 @@ oldCreditCardBtn.addEventListener('click', ()=>{
     resultsContainer.replaceChildren();
     titleOfLists.textContent = oldCreditCardBtn.innerText;
     resultsContainer.appendChild(titleOfLists);
-    renderToPage(...customSelectedPeople(randomPersonData));
+    renderToPage(...sortedData);
 });
