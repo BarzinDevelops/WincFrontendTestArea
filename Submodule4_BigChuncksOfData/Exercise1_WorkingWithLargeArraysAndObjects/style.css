@@ -51,8 +51,8 @@ body{
     /* display: flex; */
     padding: 10px;
 }
-.capri-women{
-    width: 300px;
+.person-card{
+    width: 60%;
     border: 3px solid rgba(7, 130, 118, 0.40);
     border-radius: 8px;
     display: flex;

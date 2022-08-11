@@ -1,10 +1,5 @@
-const log = console.log;
-const titleOfLists = document.createElement('h1');
-const resultsContainer = document.getElementById('results');
 
 const countryListBtn = document.getElementById('country-list');
-
-
 
 /* Sub-exercise: country list - 1 point
     List all countries, sorted by country name. */

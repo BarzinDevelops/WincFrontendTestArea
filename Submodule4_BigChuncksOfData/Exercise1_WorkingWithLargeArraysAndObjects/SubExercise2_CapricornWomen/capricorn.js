@@ -40,7 +40,7 @@ const renderCapriWoman = (...receivedCapriWomen) => {
     receivedCapriWomen.forEach(women => {
 
     const persContainer = document.createElement('div');
-    persContainer.classList.add('capri-women');
+    persContainer.classList.add('person-card');
     resultsContainer.appendChild(persContainer);
 
     const newItem_name = document.createElement('li');
@@ -72,8 +72,6 @@ const renderCapriWoman = (...receivedCapriWomen) => {
 });
 };
 
-// log(randomPersonData);
-// log(`getCapriWoman`, capriWoman);
 
 capricornWomenBtn.addEventListener('click', ()=>{
 resultsContainer.replaceChildren();
