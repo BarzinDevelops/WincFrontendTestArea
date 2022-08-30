@@ -17,30 +17,11 @@ let newData = []
 randomPersonData.forEach(({region, age}) => {
     // log(region, age)
    if(newData.length > 0){
-         newData.forEach(element => {
-            // log('element is: ', element)
-            if (element.region === region) {
-                    element.age.push(age)
-                }
-            else{
-                    newData.push(
-                        {
-                            'region' : region,
-                            'age' : [age]
-                        }
-                    )
-                }
-                /*  */
-        }); 
-
-   } else{
-        newData.push(
-            {
-                'region' : region,
-                'age' : [age]
-            }
-    )
-   }
+    newData.forEach(element => {
+        if (element.region === region) element.age.push(age)
+        else [...newData, { 'region' : region, 'age' : [age] }]                       
+    }); 
+   } //else [...newData, { 'region' : region, 'age' : [age] }]
     
 });
 
