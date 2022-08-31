@@ -10,28 +10,38 @@ To show that sentence we need to calculate the average age for that country.
 Round the mean age to whole numbers (18.4999 → 18 and 18.5 → 19). */
 
 
+let countryData = randomPersonData
+                  .filter(person => person.age>17)
+                  .map(people => people.region);
+countryData = [... new Set(countryData)]
+            .sort((country1, country2) => country1 < country2? -1 : 1);
 
-// let newData = [{'region': "Slovakia", 'age': [22]}]
-// let newData = {}
-let newData = []
-randomPersonData.forEach(({region, age}) => {
-    // log(region, age)
-   if(newData.length > 0){
-    newData.forEach(element => {
-        if (element.region === region) element.age.push(age)
-        else [...newData, { 'region' : region, 'age' : [age] }]                       
-    }); 
-   } //else [...newData, { 'region' : region, 'age' : [age] }]
-    
-});
+const getAmountPeople = country =>{
+    const countPeople = randomPersonData.filter(people => people.region === country);
+    const totalAge = countPeople.reduce((sum, curr) => sum + curr.age , 0);
+    const avgAge = Math.round(totalAge / countPeople.length);   
+    return avgAge  
+}
 
-log('newdata', newData)
-// log('test', test)
-// log('getData', getData)
+const avrAgeRender = (...avrgArr) =>{
+    let avrAgeDiv = document.createElement('div');
+    let avrAgeResultDiv = document.createElement('div');
+    avrAgeDiv.className = 'avrage_age_div';
+    avrAgeResultDiv.className = 'avrage_age_result-div';
+    resultsContainer.append(avrAgeDiv, avrAgeResultDiv);
+    avrgArr.forEach(item =>{   
+        let newCountryBtn = document.createElement('button');
+        avrAgeDiv.appendChild(newCountryBtn);
+        newCountryBtn.id = 'country-id'
+        newCountryBtn.classList.add('country-items', 'something');
+        newCountryBtn.innerText = `${item}`;
+        newCountryBtn.addEventListener('click', (e)=> {
+            const getCountryName = newCountryBtn.innerText;
+            const countryAvgAge = getAmountPeople(getCountryName);
+            avrAgeResultDiv.innerHTML = `The average age for <span class='avr-item'>${item}</span> is <span class='avr-item'>${countryAvgAge}</span>`;
+        });
+    });
+};
 
-
-
-
-
-// const avrAgeBtn = document.getElementById('average-age');
-// btnEventCreator(avrAgeBtn, avrAgeRender, avrAgeResults);
+const avrAgeBtn = document.getElementById('average-age');
+btnEventCreator(avrAgeBtn, avrAgeRender, countryData);
