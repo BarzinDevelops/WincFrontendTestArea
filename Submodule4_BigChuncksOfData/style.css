@@ -1,0 +1,149 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(181, 236, 223);
+    overflow-y: scroll;
+
+}
+.main{
+
+    margin: 0;
+    padding:  0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    /* border: 5px solid rgb(120, 27, 27); */
+    /* padding: 20px; */
+
+}
+
+.btn-container{
+    border: 5px solid rgb(55, 43, 123);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    padding: 1em;
+    gap: 10px;
+}
+.all-btns{
+    padding: 5px 10px;
+    min-width: 150px;
+    margin-left: 0;
+}
+.all-btns:active{
+    outline: none;
+}
+
+.results{
+    /* border: 3px solid red; */
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.avrage_age_div{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.country-items{
+    padding: 5px 10px;
+    
+}
+.country-items:hover{
+    background-color: rgba(0, 0, 0, 0.655);
+    color: rgb(136, 221, 136);
+}
+.avrage_age_result-div{
+    /* border: 3px solid black; */
+    padding: 20px;
+    font-size: 1.3rem;
+}
+.avr-item{
+    color: blue;
+}
+
+.person-card{
+    width: 60%;
+    border: 3px solid rgba(7, 130, 118, 0.40);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    gap: 3px;
+    position: relative;
+    margin: 15px 0;
+    box-shadow: inset 0px 0px 12px 2px rgba(7, 100, 40, 0.338);
+
+}
+.capri-women li{
+    margin: 0;
+}
+.person-photo{
+    width: 60px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border-radius: 10px;
+}
+li{
+    margin-left: 20px;
+    list-style: none;
+}
+.card-wrapper{
+    padding: 50px 0 ;
+    min-width: 100%;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, 400px );
+    justify-content: center;
+}
+.candidate-card{
+    padding: 50px 30px;
+    background: rgb(150, 197, 185);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card-info-photo{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.candidate-info{
+    line-height: 1.6;
+}
+.candidate-photo{
+    min-width: 100px;
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+.match-btn{
+    border: none;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.455);
+    width: 50%;
+    padding: 10px 5px;
+    color: red;
+    align-self: center;
+}
+.match-btn:hover{
+    background-color:  plum;
+}
+.match-btn:active{
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.655);
+}
