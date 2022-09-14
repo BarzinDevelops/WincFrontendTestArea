@@ -1,0 +1,87 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    max-width: 100%;
+    height: 100vh;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+    padding: 0 20px 20px; 
+}
+.pokeman-section{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.pokeman-section h3{
+    margin: 0;
+    padding: 0;
+}
+.poke-container{
+    color: rgb(255,255,255);
+    width: 250px;
+    box-shadow: 2px 2px 9px 3px rgba(0,0,0,0.7);
+    background-color: rgba(238, 224, 224, 0.783);
+    border-radius: 7px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.poke-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+}
+.poke-img-div{
+    display: flex;
+    bottom: 10px;
+}
+.poke-img{
+    object-fit: contain;
+    object-position: 50% 50%;
+}
+.poke-btn{
+    width: 200px;
+    padding: 5px 10px;
+}
+.poke-btn:hover{
+    background-color: lightgreen;
+}
+hr{
+    margin: 0;
+    padding: 0;
+    height: 5px;
+    color: black;
+    background-color: black;
+}
+h1,h2,h3{
+    
+    margin: 0;
+    padding: 0;
+}
+
+/* Trump section */
+.trump-section .jokes-section{
+    margin-top: -15px;
+    border: 3px solid red;
+}
+.title{
+    color: lightseagreen;
+    padding-bottom: 10px;
+}
+.results{
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+.api-list{
+    font-size: 1.2em;
+    margin: 0;
+}
+.app-info{
+    font-size: 1.2em;
+}

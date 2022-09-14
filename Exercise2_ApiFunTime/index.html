@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Exercise2 - API Fun Time</title>
+</head>
+<body>
+    <main class="main">
+        <h1>Exercise2: API Fun Time</h1>
+        
+        <section id="pokeman-section" class="pokeman-section">
+            <span class="app-info">Click on the button to see the results of 3 API requests:</span>
+            <ol class="api-list">
+               <li>Pokeman API</li>
+               <li>Trump quotes API</li> 
+               <li>jokes API</li>
+            </ol>
+            <button id="poke-btn" class="poke-btn">Get My API Results</button>
+            <h2 class="poke-title title">1- Show a Pokeman</h2>
+            <div id="poke-container">
+                <div id="poke-info" class="poke-info"></div>
+                <div id="poke-img-div" class="poke-img-div"></div>
+            </div>
+            <hr/>
+        </section>
+        
+        <section id="trump-quotes-section" class="trump-section">
+            <h2 class="trump-title  title">2- Trumps dummest quotes:</h2>
+            <div class="results" id="trump-quotes"></div>
+            <hr>
+        </section>
+
+        <section id="jokes-section" class="jokes-section">
+            <h2 class="jokes-title  title">3- Here's some joke:</h2>
+            <div class="results" id="jokes"></div>
+            <hr>
+        </section>
+    </main>
+</body>
+</html>
