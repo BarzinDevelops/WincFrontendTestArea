@@ -15,15 +15,25 @@ class List extends Component {
         }
     }
 
+    onItemClick = (item) =>{
+        console.log(`item id: ${item.id}, item-title: ${item.title}`)
+    }
 
     render(){
-        const groceryItems = this.state.groceryItems.map(item => <ListItem key={item.id} title={item.title} />)
+        const groceryItems = this.state.groceryItems
+                                .map(item => 
+                                            <ListItem 
+                                                key={item.id} 
+                                                item={item} 
+                                                clickItem={() => this.onItemClick(item)}
+                                            />
+                                 );
         return(
             <ul>
                 {groceryItems}
             </ul>
-        )
+        );
     }
 }
 
-export default List
+export default List;

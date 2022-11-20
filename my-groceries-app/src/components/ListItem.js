@@ -1,11 +1,19 @@
 import React from 'react'
 
 
-const ListItem = ({title}) =>{
+const ListItem = ({item, clickItem}) =>{
     // console.log(title)
+    // console.log(clickItem)
     return(
-        <li>{title}</li>
-    )
+        <li
+            key={item.id}
+            className="list-item"
+            onClick={clickItem}
+            value={item.title}
+        >
+            {item.title}
+        </li>
+    );
 }
 
-export default ListItem
+export default ListItem;
