@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import ListItem from './ListItem'
 
 class List extends Component {
     constructor(){
@@ -13,11 +13,11 @@ class List extends Component {
     render(){
         return(
             <ul>
-                <li>Cheese</li>
-                <li>Milk</li>
-                <li>Ristorante Pizza Fungi</li>
-                <li>Noodles {`(hot ones)`}</li>
-                <li>Ayran</li>
+                <ListItem title="Cheese"/>
+                <ListItem title="Milk"/>
+                <ListItem title="Ristorante Pizza Fungi"/>
+                <ListItem title={`Noodles (hot ones)`}/>
+                <ListItem title="Ayran"/>
             </ul>
         )
     }

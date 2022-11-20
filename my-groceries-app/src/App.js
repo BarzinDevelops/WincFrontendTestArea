@@ -4,7 +4,7 @@ import List from './components/List'
 function App() {
   return (
     <div className="App">
-      This is my Groceries APP 😎🍆🍐🎉🎉🎈🎈🍔🍟🥙
+       😎🍆🍐🎉🎉<b>This is my Groceries APP</b>🎈🎈🍔🍟🥙
 
       <List />
     </div>
