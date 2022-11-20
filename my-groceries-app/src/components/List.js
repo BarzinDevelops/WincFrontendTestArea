@@ -5,19 +5,22 @@ class List extends Component {
     constructor(){
         super()
         this.state = {
-
+            groceryItems: [
+                {id: 1, title : "Cheese" },
+                {id: 2, title : "Milk" },
+                {id: 3, title : "Ristorante Pizza Fungi" },
+                {id: 4, title : "Noodles (hot ones)" },
+                {id: 5, title : "Ayran" }
+            ],
         }
     }
 
 
     render(){
+        const groceryItems = this.state.groceryItems.map(item => <ListItem key={item.id} title={item.title} />)
         return(
             <ul>
-                <ListItem title="Cheese"/>
-                <ListItem title="Milk"/>
-                <ListItem title="Ristorante Pizza Fungi"/>
-                <ListItem title={`Noodles (hot ones)`}/>
-                <ListItem title="Ayran"/>
+                {groceryItems}
             </ul>
         )
     }
