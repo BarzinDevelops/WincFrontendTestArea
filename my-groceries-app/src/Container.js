@@ -14,6 +14,7 @@ class Container extends Component {
                 {id: 4, title : "Noodles (hot ones)" },
                 {id: 5, title : "Ayran" }
             ],
+            shoppingListItems: [],
         }
     }
 
