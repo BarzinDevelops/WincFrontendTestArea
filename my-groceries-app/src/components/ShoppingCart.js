@@ -4,7 +4,9 @@ import List from "./List"
 
 const ShoppingCart = ({item}) =>{
     return (
-        <List />
+        <div className="ShoppingCart-wrapper">
+            <List />
+        </div>
     )
 }
 

@@ -1,12 +1,11 @@
 import React from 'react'
-import List from './components/List'
+import Container from './Container'
 
 function App() {
   return (
-    <div className="App">
-       😎🍆🍐🎉🎉<b>This is my Groceries APP</b>🎈🎈🍔🍟🥙
-
-      <List />
+    <div className="app-wrapper">
+       {/* 😎🍆🍐🎉🎉<b>This is my Groceries APP</b>🎈🎈🍔🍟🥙 */}
+      <Container />
     </div>
   );
 }
