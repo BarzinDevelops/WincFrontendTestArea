@@ -5,7 +5,8 @@ import List from "./List"
 const ShoppingList = ({item}) =>{
     return (
         <div className="ShoppingList-wrapper">
-            <List />
+            <h1 className="shoppin-list-title">Shopping list</h1>
+            <List  className='ShoppingList-item'/>
         </div>
     )
 }

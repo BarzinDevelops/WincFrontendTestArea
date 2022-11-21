@@ -29,7 +29,7 @@ class List extends Component {
                                             />
                                  );
         return(
-            <ul>
+            <ul className='listitems-wrapper'>
                 {groceryItems}
             </ul>
         );
