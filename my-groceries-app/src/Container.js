@@ -7,7 +7,13 @@ class Container extends Component {
     constructor(){
         super()
         this.state = {
-
+            groceryItems: [
+                {id: 1, title : "Cheese" },
+                {id: 2, title : "Milk" },
+                {id: 3, title : "Ristorante Pizza Fungi" },
+                {id: 4, title : "Noodles (hot ones)" },
+                {id: 5, title : "Ayran" }
+            ],
         }
     }
 

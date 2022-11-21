@@ -5,13 +5,6 @@ class List extends Component {
     constructor(){
         super()
         this.state = {
-            groceryItems: [
-                {id: 1, title : "Cheese" },
-                {id: 2, title : "Milk" },
-                {id: 3, title : "Ristorante Pizza Fungi" },
-                {id: 4, title : "Noodles (hot ones)" },
-                {id: 5, title : "Ayran" }
-            ],
         }
     }
 
@@ -20,14 +13,16 @@ class List extends Component {
     }
 
     render(){
-        const groceryItems = this.state.groceryItems
-                                .map(item => 
-                                            <ListItem 
-                                                key={item.id} 
-                                                item={item} 
-                                                clickItem={() => this.onItemClick(item)}
-                                            />
-                                 );
+        const groceryItems = 
+            this.state.groceryItems
+            .map(item => 
+                <ListItem 
+                    key={item.id} 
+                    item={item} 
+                    clickItem={() => this.onItemClick(item)}
+                />
+            );
+
         return(
             <ul className='listitems-wrapper'>
                 {groceryItems}
