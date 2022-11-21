@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import GroceryList from './components/GroceryList'
-import ShoppingCart from './components/ShoppingCart'
+// import ShoppingCart from './components/ShoppingCart'
 
 
 class Container extends Component {
@@ -9,20 +9,26 @@ class Container extends Component {
         this.state = {
             groceryItems: [
                 {id: 1, title : "Cheese" },
-                {id: 2, title : "Milk" },
-                {id: 3, title : "Ristorante Pizza Fungi" },
-                {id: 4, title : "Noodles (hot ones)" },
-                {id: 5, title : "Ayran" }
+                {id: 2, title : "Milk" }
             ],
             shoppingListItems: [],
         }
     }
 
+    handleClickGroceryItem = ()=>{
+
+    }
+
     render(){
+        // console.log('item object in Container: ', this.groceryItems)
+        this.state.groceryItems.map(item => 
+         <GroceryList key={item.id} item={item}/>
+    )
+
         return(
             <div className='container-wrapper'>
-                <GroceryList />
-                <ShoppingCart />
+                {/* {groceryItems} */}
+                {/* <ShoppingCart /> */}
             </div>
         )
     }
