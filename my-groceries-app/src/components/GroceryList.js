@@ -1,19 +1,21 @@
 import React from "react"
-// import List from "./List"
+import List from "./List"
 
 
 const GroceryList = (props) =>{
-    
-    console.log('item object in Container: ',props.item.title)
-    return (
-        <div> {
-            // {item}
-        }</div>
-       
-        // <div className="ShoppingList-wrapper">
-        //     <h1 className="shoppin-list-title">Shopping list</h1>
-        //     <List item={item}  className='ShoppingList-item'/>
-        // </div>
+    // const groceryItem = props.item
+    // console.log('groceryItem in GroceryList: ',groceryItem)
+    // console.log('item.item in GroceryList: ',item)
+    // console.log('props.item in GroceryList: ',props.grocery)
+    return (    
+        <div>
+            <List 
+                key={props.grocery.id} 
+                item={props.item}
+                clickItem={props.clickItem}
+                className='ShoppingList-item'
+            />
+        </div>
     )
 }
 
