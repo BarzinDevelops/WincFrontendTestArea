@@ -6,7 +6,7 @@ const ListItem = ({clickItem, item}) =>{
         <li
             key={item.id}
             className="list-item"
-            onClick={()=>clickItem(item.title)}
+            onClick={()=>clickItem(item)}
             value={item.title}
         >
             {item.title}

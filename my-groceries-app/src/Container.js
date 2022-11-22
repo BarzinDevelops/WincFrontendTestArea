@@ -8,7 +8,7 @@ class Container extends Component {
     this.state = {
       groceryItems: [
         { id: 1, title: "Cheese" },
-        // { id: 2, title: "Milk" },
+        { id: 2, title: "Milk" },
         // { id: 3, title: "shoes" },
       ],
       shoppingListItems: [
@@ -19,8 +19,11 @@ class Container extends Component {
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
   }
 
-  handleClickGroceryItem = (somePram) =>  
-        this.setState({shoppingListItems: [...this.state.shoppingListItems, somePram]})
+  handleClickGroceryItem = (somePram) =>  {
+    console.log(somePram)
+    this.setState({shoppingListItems: [...this.state.shoppingListItems, somePram]})
+  }
+        
 
 
   render() {
@@ -44,7 +47,7 @@ class Container extends Component {
           {
             this.state.shoppingListItems.map((item) => (
                 <ShoppingCart
-                  key={item.length+1}
+                  key={item.length}
                   item={item}
                 />
               ))

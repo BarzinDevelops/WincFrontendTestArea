@@ -50,13 +50,41 @@ body{
   padding: 10px;
   gap: 10px;
 }
-.listitems-wrapper{
-  border: 3px solid yellowgreen;
-  padding: 10px;
+
+/* Shopping Cart */
+
+.cart-item-wrapper:nth-child(odd){
+  background-color: rgb(14, 84, 124);
+}
+.cart-item-wrapper:nth-child(even){
+  background-color: rgb(68, 197, 230);
+}
+.cart-item{
+  /* border: 3px solid rgb(214, 120, 233); */
+  padding: 5px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
+
+/* Shopping List */
+
+.grocery-item-wrapper:nth-child(odd){
+  background-color: rgb(224, 61, 20);
+}
+.grocery-item-wrapper:nth-child(even){
+  background-color: rgb(202, 112, 90);
+}
+
+.grocery-item{
+  /* border: 3px solid rgb(101, 114, 224); */
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .shoppin-list-title, .shoppin-cart-title {
   text-align: center;
 }
@@ -68,17 +96,5 @@ li{
   text-decoration: none;
   list-style: none;
   padding: 5px 10px;
-}
-.ShoppingCart-item:nth-child(odd){
-  background-color: rgb(14, 84, 124);
-}
-.ShoppingCart-item:nth-child(even){
-  background-color: rgb(68, 197, 230);
-}
-.ShoppingList-item:nth-child(odd){
-  background-color: rgb(224, 61, 20);
-}
-.ShoppingList-item:nth-child(even){
-  background-color: rgb(202, 112, 90);
 }
 
