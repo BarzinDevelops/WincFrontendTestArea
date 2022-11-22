@@ -1,21 +1,16 @@
 import React from 'react'
 
 
-const ListItem = ( props) =>{
-    console.log('props in listItem:', props)
-    // console.log('item in listItem:', grocery)
-    // console.log(clickItem)
+const ListItem = ({clickItem, item}) =>{
     return(
-        <p>{props.item.title}</p>
-        // <li
-        //     key={props.item.id}
-        //     className="list-item"
-        //     onClick={()=> props.clickItem}
-        //     value={props.item.title}
-        // >
-        //     {props.item.title}
-        // </li>
+        <li
+            key={item.id}
+            className="list-item"
+            onClick={()=>clickItem(item.title)}
+            value={item.title}
+        >
+            {item.title}
+        </li>
     );
 }
-
 export default ListItem;

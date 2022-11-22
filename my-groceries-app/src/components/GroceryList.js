@@ -3,14 +3,11 @@ import List from "./List"
 
 
 const GroceryList = (props) =>{
-    // const groceryItem = props.item
-    // console.log('groceryItem in GroceryList: ',groceryItem)
-    // console.log('item.item in GroceryList: ',item)
-    // console.log('props.item in GroceryList: ',props.grocery)
+    // console.log('props.item in GroceryList: ',props)
     return (    
         <div>
             <List 
-                key={props.grocery.id} 
+                key={props.item.id} 
                 item={props.item}
                 clickItem={props.clickItem}
                 className='ShoppingList-item'

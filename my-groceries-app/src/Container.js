@@ -15,37 +15,40 @@ class Container extends Component {
         
       ],
     };
+
+    this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
   }
 
-  handleClickGroceryItem = (clickedGrocery) => {
-        console.log('clickedGrocery',clickedGrocery)
+  handleClickGroceryItem = (somePram) => {
+        console.log('somePram', somePram)
   };
 
   render() {
-    // console.log('item object in Container: ', this.groceryItems)
-    const groceryItems = this.state.groceryItems.map((item) => (
-      <GroceryList
-        key={item.id}
-        grocery={item}
-        clickItem={()=>this.handleClickGroceryItem}
-      />
-    ));
-    const shoppingCartItems = this.state.shoppingListItems.map((item) => (
-      <ShoppingCart
-        key={item.id}
-        item={item}
-      />
-    ));
-
+    
     return (
       <div className="container-wrapper">
         <div className="ShoppingList-wrapper">
           <h1 className="shopping-list-title">Grocery list</h1>
-          {groceryItems}
+          {
+            this.state.groceryItems.map((item) => (
+                <GroceryList
+                  key={item.id}
+                  item={item}
+                  clickItem={this.handleClickGroceryItem}
+                />
+              ))
+          }
         </div>
         <div className="ShoppingCart-wrapper">
           <h1 className="shopping-cart-title">Shopping cart</h1>
-          {shoppingCartItems}
+          {
+            this.state.shoppingListItems.map((item) => (
+                <ShoppingCart
+                  key={item.id}
+                  item={item}
+                />
+              ))
+          }
         </div>
       </div>
     );
