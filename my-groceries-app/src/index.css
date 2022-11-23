@@ -57,7 +57,7 @@ body{
   gap: 15px;
 }
 
-.shoppinglist-header{
+.grocery-list-header{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,7 +81,33 @@ body{
 }
 
 
-/* Shopping List */
+/* Grocery List */
+.grocery-wrapper{
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+/* ------------ Search input field and Add button---------------*/
+.search-field-wrapper{
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  
+}
+.search-field-wrapper > input{
+  padding: 10px 20px;
+}
+.search-field-wrapper > input:focus{
+  outline: none;
+}
+
+.add-grocery-item-btn{
+  padding: 10px;
+  background-color: rgba(255, 99, 71, 0.548);
+}
+/* ---------------------------------- */
 
 .grocery-item-wrapper:nth-child(odd){
   background-color: rgb(224, 61, 20);

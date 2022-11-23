@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import GroceryList from "./components/GroceryList";
 import ShoppingCart from "./components/ShoppingCart";
+import GroceryHeader from "./components/GroceryHeader";
+import InputField from "./components/InputField";
 
 class Container extends Component {
   constructor() {
@@ -34,18 +36,10 @@ class Container extends Component {
     
     return (
       <div className="container-wrapper">
+
         <div className="ShoppingList-wrapper">
-            <div className="shoppinglist-header">
-                <img src={require("./images/grocery_basket.png")}
-                        width="40" 
-                        height="40"
-                />
-                <h1 className="shopping-list-title">
-                    
-                    Grocery list🗒️
-                </h1>
-     
-            </div>
+            <GroceryHeader />
+            <InputField /> 
             {
                 this.state.groceryItems.map((item) => (
                     <GroceryList
@@ -56,6 +50,8 @@ class Container extends Component {
                 ))
             }
         </div>
+
+
         <div className="ShoppingCart-wrapper">
             <div className="cart-header">
                 <h1 className="shopping-cart-title">Shopping cart 🛒</h1>
