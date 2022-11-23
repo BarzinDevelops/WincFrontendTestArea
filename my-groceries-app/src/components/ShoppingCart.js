@@ -3,9 +3,10 @@ import List from "./List"
 
 
 const ShoppingCart = (props) =>{
-    console.log('props in cart: ', props)
+    // console.log('props in cart: ', props)
     return (
         <div className="cart-item-wrapper">
+            
             <List 
                 key={props.item.id} 
                 item={props.item}
