@@ -9,17 +9,19 @@ class Container extends Component {
     super();
     this.state = {
       groceryItems: [
-        { id: 1, title: "Cheese" },
-        { id: 2, title: "Milk" },
+        // { id: 1, title: "Cheese" },
+        // { id: 2, title: "Milk" },
         // { id: 3, title: "shoes" },
       ],
       shoppingListItems: [
         
       ],
+      userInput: ""
     };
 
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
     this.emptyShoppingCart = this.emptyShoppingCart.bind(this)
+    this.handleUserInput = this.handleUserInput.bind(this)
   }
 
   handleClickGroceryItem = (somePram) =>  {
@@ -32,6 +34,22 @@ class Container extends Component {
         this.setState({shoppingListItems: []})
   }
 
+  handleOnInputChange = (event) =>{
+    this.setState({userInput: event.target.value})
+  }
+
+  handleUserInput = (input) =>{
+    // console.log('added', input)
+    this.setState(()=> {
+        
+        let updatedGrocery = [...this.state.groceryItems, input]
+        console.log('updatedGrocery', updatedGrocery)
+        updatedGrocery = new Set(updatedGrocery)
+        console.log('unique -> updatedGrocery', updatedGrocery)
+        return {groceryItems : [...updatedGrocery]}
+    })
+  }
+
   render() {
     
     return (
@@ -39,13 +57,25 @@ class Container extends Component {
 
         <div className="ShoppingList-wrapper">
             <GroceryHeader />
-            <InputField /> 
+            <InputField 
+                key={this.state.groceryItems.length+1}
+                item={this.state.groceryItems}
+                userInput={this.state.userInput}
+                
+                handleOnInputChange={this.handleOnInputChange}
+                handleUserInput={this.handleUserInput}
+
+            />  
             {
                 this.state.groceryItems.map((item) => (
                     <GroceryList
-                    key={item.id}
-                    item={item}
-                    clickItem={this.handleClickGroceryItem}
+                        key={item.id}
+                        item={item}
+                        clickItem={this.handleClickGroceryItem}
+                        handleUserInput={this.handleUserInput}
+                        currentGroceries={this.state.groceryItems}
+                        handleOnInputChange={this.handleOnInputChange}
+                        userInput={this.state.userInput}
                     />
                 ))
             }
