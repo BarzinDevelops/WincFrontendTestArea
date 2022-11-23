@@ -26,7 +26,8 @@ class Container extends Component {
   }
         
   emptyShoppingCart = () => {
-        console.log('empty cart!')
+        // console.log('empty cart!')
+        this.setState({shoppingListItems: []})
   }
 
   render() {
@@ -35,7 +36,15 @@ class Container extends Component {
       <div className="container-wrapper">
         <div className="ShoppingList-wrapper">
             <div className="shoppinglist-header">
-                <h1 className="shopping-list-title">Grocery list</h1>
+                <img src={require("./images/grocery_basket.png")}
+                        width="40" 
+                        height="40"
+                />
+                <h1 className="shopping-list-title">
+                    
+                    Grocery list🗒️
+                </h1>
+     
             </div>
             {
                 this.state.groceryItems.map((item) => (
@@ -49,13 +58,23 @@ class Container extends Component {
         </div>
         <div className="ShoppingCart-wrapper">
             <div className="cart-header">
-                <h1 className="shopping-cart-title">Shopping cart</h1>
-                <button 
-                    onClick={this.emptyShoppingCart }
-                    className="empty-cart-btn"
-                >
-                    Empty the shopping cart
-                </button>
+                <h1 className="shopping-cart-title">Shopping cart 🛒</h1>
+                
+                {this.state.shoppingListItems.length > 0 ? 
+                    <button 
+                        onClick={this.emptyShoppingCart }
+                        className="empty-cart-btn"
+                    >
+                        Empty the shopping cart
+                    </button>
+                    :
+                    <h3 
+                        className="shopping-cart-title" 
+                        style={{color: "rgba(10, 58, 114, 0.466)"}}
+                    >
+                        Your shopping cart is empty now!
+                    </h3>
+                }
             </div>
             
             {
