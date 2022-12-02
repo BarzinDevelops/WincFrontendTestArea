@@ -1,11 +1,12 @@
 import React from 'react'
 
 
-const ListItem = ({handleClickGroceryItem, grocery}) =>{
+const ListItem = ({handleClickGroceryItem, grocery, className}) =>{
+    console.log('grocery object in ListItem: ', grocery)
     return(
         <li
             key={grocery.id}
-            className="list-item"
+            className={className}
             onClick={()=>handleClickGroceryItem(grocery)}
             value={grocery.title}
         >

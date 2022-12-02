@@ -1,19 +1,35 @@
 import React from "react"
 import List from "./List"
+import CartHeader from "./CartHeader"
 
 
-const ShoppingCart = (props) =>{
-    // console.log('props in cart: ', props)
+const ShoppingCart = ({shoppingListItems, emptyShoppingCart}) =>{
+   
+    // console.log('shoppingListItems in cart: ', shoppingListItems)
     return (
-        <div className="cart-item-wrapper">
-            
-            <List 
-                key={props.item.id} 
-                item={props.item}
-                clickItem={props.clickItem}
-                className='cart-item'
+        
+        <>
+            <CartHeader 
+                shoppingListItems={shoppingListItems} 
+                emptyShoppingCart={emptyShoppingCart}
             />
-        </div>
+            <div  className="cart-item-wrapper">
+                halllooo
+            {
+                shoppingListItems.length > 0 &&
+                shoppingListItems.map(cartItem =>{ 
+                       
+                            <List 
+                                key={cartItem.id} 
+                                grocery={cartItem}
+                                className='cart-item'
+                            />
+                        
+                })
+            }
+            </div>
+            
+        </>
     )
 }
 

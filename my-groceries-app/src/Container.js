@@ -2,22 +2,12 @@ import React, { Component } from "react";
 import GroceryList from "./components/GroceryList";
 import ShoppingCart from "./components/ShoppingCart";
 
-import CartHeader from "./components/CartHeader";
-import InputField from "./components/InputField";
-
 class Container extends Component {
   constructor() {
     super();
     this.state = {
-      groceryItems: [
-        // { id: 1, title: "Cheese" },
-        // { id: 2, title: "Milk" },
-        // { id: 3, title: "shoes" },
-      ],
-      shoppingListItems: [
-        
-      ],
-      // userInput: ""
+      groceryItems: [{id: 1, title: 'test'},],
+      shoppingListItems: [],
     };
 
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
@@ -41,7 +31,7 @@ class Container extends Component {
     this.setState(()=> {
         
         let updatedGrocery = [...this.state.groceryItems, input]
-        console.log('updatedGrocery', updatedGrocery)
+        // console.log('updatedGrocery', updatedGrocery)
         return {groceryItems : [...updatedGrocery]}
     })
   }
@@ -65,21 +55,12 @@ class Container extends Component {
 
 
         <div className="ShoppingCart-wrapper">
-            <CartHeader 
-                groceryItems={this.state.groceryItems} 
-                emptyShoppingCart={this.emptyShoppingCart} 
-            />
             {
-              console.log('this.state.shoppingListItems =>',this.state.shoppingListItems)
-            }
-            {
-              
-                this.state.shoppingListItems.map((item) => (
-                    <ShoppingCart
-                      key={item.length}
-                      item={item}
-                    />
-                ))
+              <ShoppingCart
+                key={this.state.shoppingListItems.id}
+                shoppingListItems={this.state.shoppingListItems}
+                emptyShoppingCart={this.emptyShoppingCart}
+              />
             }
         </div>
       </div>

@@ -1,12 +1,12 @@
 import React from "react"
 
-const CartHeader = ({groceryItems, emptyShoppingCart}) =>{
+const CartHeader = ({shoppingListItems, emptyShoppingCart}) =>{
     // console.log('props of CartHeader', props)
     return (
         <div className="cart-header">
         <h1 className="shopping-cart-title">Shopping cart 🛒</h1>
         
-        {groceryItems.length > 0 ? 
+        {shoppingListItems.length > 0 ? 
             <button 
                 onClick={()=> emptyShoppingCart() }
                 className="empty-cart-btn"

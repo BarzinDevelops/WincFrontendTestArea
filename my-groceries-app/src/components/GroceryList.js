@@ -19,14 +19,16 @@ const GroceryList = (props) => {
             
                 { 
                     props.currentGroceries.length > 0 &&
-                    // <div>
-                        <List
-                            key={props.currentGroceries.length+1}
-                            currentGroceries={props.currentGroceries}
-                            handleClickGroceryItem={props.handleClickGroceryItem}
-                            className="grocery-item"
-                        />
-                    // </div>
+                        props.currentGroceries.map(grocery=> {
+                            return(            
+                                <List
+                                    key={props.currentGroceries.length+1}
+                                    grocery={grocery}
+                                    handleClickGroceryItem={props.handleClickGroceryItem}
+                                    className="list-item"
+                                />
+                                )
+                        })
                 }
             
         </div>
