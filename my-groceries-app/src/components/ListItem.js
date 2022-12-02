@@ -1,15 +1,15 @@
 import React from 'react'
 
 
-const ListItem = ({clickItem, item}) =>{
+const ListItem = ({handleClickGroceryItem, grocery}) =>{
     return(
         <li
-            key={item.id}
+            key={grocery.id}
             className="list-item"
-            onClick={()=>clickItem(item)}
-            value={item.title}
+            onClick={()=>handleClickGroceryItem(grocery)}
+            value={grocery.title}
         >
-            {item.title}
+            {grocery.title}
         </li>
     );
 }

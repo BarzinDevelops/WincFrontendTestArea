@@ -1,38 +1,35 @@
 import React from "react";
 import List from "./List";
+
+import GroceryHeader from "./GroceryHeader";
 import InputField from "./InputField";
 
 const GroceryList = (props) => {
     // console.log('props.item in GroceryList: ',props)
-{/* <InputField 
-            key={props.item.length+1}
-            item={props.currentGroceries}
-            userInput={props.userInput}
-            handleUserInput={props.handleUserInput}
-            handleOnInputChange={props.handleOnInputChange}
-        /> */}
   return (
     
     <>
-        {/* <InputField 
-            key={props.item.length+1}
-            item={props.currentGroceries}
-            userInput={props.userInput}
+        <GroceryHeader />
+        <InputField 
+            key={props.currentGroceries.length+1}
+            currentGroceries={props.currentGroceries}
             handleUserInput={props.handleUserInput}
-            handleOnInputChange={props.handleOnInputChange}
-        />  */}
-                    <div className="grocery-wrapper">
-                    <div className="grocery-item-wrapper">
-                        <div>
+        /> 
+        <div className="grocery-wrapper">
+            
+                { 
+                    props.currentGroceries.length > 0 &&
+                    // <div>
                         <List
-                            key={props.item.id}
-                            item={props.item}
-                            clickItem={props.clickItem}
+                            key={props.currentGroceries.length+1}
+                            currentGroceries={props.currentGroceries}
+                            handleClickGroceryItem={props.handleClickGroceryItem}
                             className="grocery-item"
                         />
-                        </div>
-                    </div>
-                </div>
+                    // </div>
+                }
+            
+        </div>
     </>
 
   );

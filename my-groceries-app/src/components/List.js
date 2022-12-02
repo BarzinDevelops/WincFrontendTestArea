@@ -1,17 +1,24 @@
 import React from 'react'
 import ListItem from './ListItem'
 
-const List = (props) => {
+const List = ({currentGroceries, handleClickGroceryItem, className}) => {
     // console.log('props object in List: ', props)
+    // console.log('currentGroceries object in List: ', currentGroceries)
     return(
-        <ul className={props.className}>
-            <ListItem 
-                key={props.item.id} 
-                item={props.item}
-                clickItem={props.clickItem}
-                
-            />
-        </ul>
+        <div className="grocery-item-wrapper">
+            {   
+                currentGroceries.map(grocery=> {
+                return (
+                    <ListItem 
+                        key={grocery.id} 
+                        grocery={grocery}
+                        handleClickGroceryItem={handleClickGroceryItem}
+                    />
+                )
+
+            })}
+            
+        </div>
     );
 }
 
