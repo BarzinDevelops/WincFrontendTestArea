@@ -5,7 +5,7 @@ const List = ({grocery, handleClickGroceryItem, className}) => {
     // console.log('props object in List: ', props)
     console.log('grocery object in List: ', grocery)
     return(
-        <div >
+        <>
             {   
                 <ListItem 
                     key={grocery.id} 
@@ -15,7 +15,7 @@ const List = ({grocery, handleClickGroceryItem, className}) => {
                 />
             }
             
-        </div>
+        </>
     );
 }
 
