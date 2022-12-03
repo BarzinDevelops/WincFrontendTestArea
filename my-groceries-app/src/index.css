@@ -53,7 +53,7 @@ body{
   gap: 10px;
 }
 .cart-header {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +62,7 @@ body{
 
 .grocery-list-header{
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
 }
@@ -92,6 +93,8 @@ body{
     text-decoration: none;
     list-style: none;
     padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
 
 }
 .cart-item:nth-child(odd){
@@ -114,8 +117,10 @@ body{
 }
 /* ------------ Search input field and Add button---------------*/
 .search-field-wrapper{
-
+  /* border: 3px solid black; */
+  width: 30%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 10px;
   
@@ -127,10 +132,7 @@ body{
   outline: none;
 }
 
-.add-grocery-item-btn{
-  padding: 10px;
-  background-color: rgba(255, 99, 71, 0.548);
-}
+
 /* ---------------------------------- */
 
 .grocery-item-wrapper{
@@ -146,11 +148,12 @@ body{
   padding: 10px 20px;
 }
 .list-item:nth-child(odd){
-  background-color: rgb(224, 61, 20);
+  background-color: rgba(224, 61, 20, 0.788);
   color: whitesmoke;
 }
 .list-item:nth-child(even){
-  background-color: rgb(202, 112, 90);
+  background-color: rgb(255, 99, 71, 0.548);
+  color: whitesmoke;
 }
 
 
@@ -170,7 +173,6 @@ body{
 }
 .empty-cart-btn:hover{
   background-color: rgb(10, 35, 63);
-  
   color: whitesmoke;
 }
 .empty-cart-btn:active{
@@ -179,4 +181,16 @@ body{
 }
 .empty-cart-btn:focus{
   outline: none;
+}
+
+
+.add-grocery-item-btn{
+  border: none;
+  padding: 10px;
+  background-color: rgba(216, 163, 153, 0.548);
+  box-shadow: 1px 2px 4px 1px rgba(116, 38, 23, 0.466);
+}
+
+.add-grocery-item-btn:active{
+  box-shadow: 0px 0px 0px rgba(116, 38, 23, 0.466);
 }

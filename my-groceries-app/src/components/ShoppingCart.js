@@ -19,9 +19,10 @@ const ShoppingCart = ({shoppingListItems, emptyShoppingCart}) =>{
                 shoppingListItems.map(cartItem =>
                        
                             <List 
-                                key={cartItem.id} 
+                                key={cartItem.id+1} 
                                 grocery={cartItem}
                                 className='cart-item'
+                                showQuantities={true}
                             />
                         
                 )
