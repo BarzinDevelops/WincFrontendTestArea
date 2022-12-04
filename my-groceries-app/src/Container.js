@@ -8,8 +8,7 @@ class Container extends Component {
     this.state = {
       groceryItems: [],
       shoppingListItems: [
-        {id: 1, title: 'cake', amount: 3},
-        {id: 2, title: 'chocola', amount: 2}],
+        {id: 1, title: 'cake', amount: 3}],
     };
 
     // this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
@@ -29,28 +28,14 @@ class Container extends Component {
        
            let updatedShoppingList = this.state.shoppingListItems
               .map(obj => {
-                // obj.title === itemToChange.title && obj.amout + 1
-                // console.log('obj', obj)
-                // console.log('obj.title', obj.title)
-                // console.log('itemToChange.title', itemToChange.title)
-                // if (obj.title === itemToChange.title) 
-                //     { 
-                //       ...obj,
-                //       amount: itemToChange + 1
-                //     } 
-                    // obj.amount = itemToChange.amount + 1
+ 
                 return obj
                 // console.log('obj', obj)
                 // return ''
               }
                   
               );
-console.log('updatedShoppingList', updatedShoppingList)
-            // this.setState({shoppingListItems: updatedShoppingList})
-            // console.log('updatedShoppingList: ', 
-            // updatedShoppingList)
-     
-      
+        console.log('updatedShoppingList', updatedShoppingList)
   }
 
   handleClickGroceryItem = (somePram) =>  {

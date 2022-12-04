@@ -11,6 +11,7 @@ const List = ({grocery, handleClickGroceryItem, className,showQuantities}) => {
                 <ListItem 
                     key={grocery.id} 
                     grocery={grocery}
+                    showQuantities={showQuantities}
                     handleClickGroceryItem={handleClickGroceryItem}
                     className={className}
                     amount={showQuantities && grocery.amount > 1 ? 
