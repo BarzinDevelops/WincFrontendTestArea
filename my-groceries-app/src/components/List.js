@@ -14,7 +14,7 @@ const List = ({grocery, handleClickGroceryItem, className,showQuantities}) => {
                     showQuantities={showQuantities}
                     handleClickGroceryItem={handleClickGroceryItem}
                     className={className}
-                    amount={showQuantities && grocery.amount > 1 ? 
+                    amount={showQuantities && grocery.amount >= 1 ? 
                         <span>Amount: {grocery.amount}</span>: ''}
                 />
             }

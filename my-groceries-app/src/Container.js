@@ -8,7 +8,7 @@ class Container extends Component {
     this.state = {
       groceryItems: [],
       shoppingListItems: [
-        {id: 1, title: 'cake', amount: 3}],
+        ],
     };
 
     // this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this)
@@ -22,38 +22,63 @@ class Container extends Component {
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   addAmountToItem = (itemToChange) =>{
-      
- console.log('previous state shoppingListItems: ', this.state.shoppingListItems)
+    // console.log('itemIndexToChange',itemIndexToChange)
 
-       
-           let updatedShoppingList = this.state.shoppingListItems
-              .map(obj => {
- 
-                return obj
-                // console.log('obj', obj)
-                // return ''
-              }
-                  
-              );
-        console.log('updatedShoppingList', updatedShoppingList)
+
+
+    const updatedShoppingListItems = 
+      this.state.shoppingListItems.map((obj) =>{
+        if(obj.title === itemToChange.title )
+        {return {...obj, amount: obj.amount +1}}
+        return obj
+        
+
+        
+
+        // console.log('arr[itemIndexToChange]',arr[itemIndexToChange])
+        // console.log('arr[itemIndexToChange].amount',arr[itemIndexToChange].amount += 1)
+      })
+this.setState(()=>{
+  return {shoppingListItems: updatedShoppingListItems}
+})
+    // this.setState(() =>        
+    //   {
+    //     {
+    //       this.state.shoppingListItems[itemIndexToChange].amount = 
+    //       this.state.shoppingListItems[itemIndexToChange].amount +1
+    //     }     
+    //   }
+    // )
+
+
+
+            console.log('updatedShoppingListItems', updatedShoppingListItems)
   }
 
   handleClickGroceryItem = (somePram) =>  {
-    console.log('somePram =>', somePram)
-
-
     //check if arguments title value exists in shoppingListItems:
-    // const shoppingListItems = this.state.shoppingListItems
-    // for(let item of shoppingListItems){
-      
-    //    if(item.title === somePram.title) {
-    //       this.addAmountToItem(item)
-    //    } 
-    // }
+    let isInShoppingList = false;
+    const shoppingCartItems = this.state.shoppingListItems
 
-    somePram.amount = 1
-    this.setState({shoppingListItems: [...this.state.shoppingListItems, somePram]})
-    // this.setState({shoppingListItems: [...this.state.shoppingListItems, somePram]})
+    
+    for(let item of shoppingCartItems){
+     
+       if(item.title === somePram.title) {
+     
+        this.addAmountToItem(item)
+        isInShoppingList = true
+       } 
+    }
+    
+    // console.log('isInShoppingList', isInShoppingList)
+    if(!isInShoppingList) {
+      // console.log('if(!isInShoppingList)')
+      somePram.amount = 1
+      this.setState({shoppingListItems: [...this.state.shoppingListItems, somePram]})
+   } 
+
+  //  console.log('shoppingGroceryItems', this.state.groceryItems)
+
   }
         
 
@@ -77,7 +102,7 @@ class Container extends Component {
   }
 
   render() {
-    
+   
     return (
       <div className="container-wrapper">
 

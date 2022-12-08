@@ -8,6 +8,7 @@ const ListItem = ({ handleClickGroceryItem,
                     showQuantities
                 }) =>{
     // console.log('grocery object in ListItem: ', grocery)
+
     return(
         <li
             key={grocery.id}
