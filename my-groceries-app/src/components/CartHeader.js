@@ -11,7 +11,7 @@ const CartHeader = ({shoppingListItems, emptyShoppingCart}) =>{
                 onClick={()=> emptyShoppingCart() }
                 className="empty-cart-btn"
             >
-                Empty the shopping cart
+                Empty Cart
             </button>
             :
             <h3 

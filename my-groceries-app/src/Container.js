@@ -31,26 +31,11 @@ class Container extends Component {
         if(obj.title === itemToChange.title )
         {return {...obj, amount: obj.amount +1}}
         return obj
-        
-
-        
-
-        // console.log('arr[itemIndexToChange]',arr[itemIndexToChange])
-        // console.log('arr[itemIndexToChange].amount',arr[itemIndexToChange].amount += 1)
+      
       })
 this.setState(()=>{
   return {shoppingListItems: updatedShoppingListItems}
 })
-    // this.setState(() =>        
-    //   {
-    //     {
-    //       this.state.shoppingListItems[itemIndexToChange].amount = 
-    //       this.state.shoppingListItems[itemIndexToChange].amount +1
-    //     }     
-    //   }
-    // )
-
-
 
             console.log('updatedShoppingListItems', updatedShoppingListItems)
   }

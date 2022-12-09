@@ -21,7 +21,6 @@ class InputField extends Component{
                 <input 
                     type="text"
                     placeholder="What to buy...?" 
-                    // value={props.userInput}
                     onChange={this.handleOnInputChange}
                 />
                 <button 
@@ -34,9 +33,9 @@ class InputField extends Component{
                     }
                     className='add-grocery-item-btn'
                 >
-                    Add Item
+                    Add
                 </button>
-        </div>
+            </div>
         )
     }
 }
