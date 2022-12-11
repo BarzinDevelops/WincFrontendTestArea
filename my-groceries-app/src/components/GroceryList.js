@@ -4,39 +4,31 @@ import List from "./List";
 import GroceryHeader from "./GroceryHeader";
 import InputField from "./InputField";
 
-const GroceryList = (props) => {
-    // console.log('props.item in GroceryList: ',props)
-    console.log('props =>', props)
-    console.log('props.currentGroceries =>', props.currentGroceries)
-  return (
-    
+const GroceryList = ({currentGroceries, handleClickGroceryItem, handleUserInput}) => {
+  return (   
     <div className="grocery-header">
         <GroceryHeader />
         <InputField 
-            key={props.currentGroceries.length+1}
-            currentGroceries={props.currentGroceries}
-            handleUserInput={props.handleUserInput}
+            currentGroceries={currentGroceries}
+            handleUserInput={handleUserInput}
         /> 
-        <div className="grocery-wrapper">
-            
-                { 
-                    props.currentGroceries.length > 0 &&
-                        props.currentGroceries.map(grocery=> {
-                            return(            
-                                <List
-                                    key={props.currentGroceries.length+1}
-                                    grocery={grocery}
-                                    handleClickGroceryItem={props.handleClickGroceryItem}
-                                    className="list-item"
-                                />
-                                )
-                        })
-                }
-            
+        <div className="grocery-wrapper">            
+            { 
+                currentGroceries.length > 0 &&
+                    currentGroceries.map(grocery=> {
+                        return(            
+                            <List
+                                key={grocery.id}
+                                grocery={grocery}
+                                handleClickGroceryItem={handleClickGroceryItem}
+                                className="list-item"
+                            />
+                            )
+                    })
+            }            
         </div>
     </div>
-
-  );
-};
+  )
+}
 
 export default GroceryList;

@@ -1,7 +1,6 @@
 import React from "react"
 
 const CartHeader = ({shoppingListItems, emptyShoppingCart}) =>{
-    // console.log('props of CartHeader', props)
     return (
         <div className="cart-header">
             <div className="cart-title">
@@ -24,7 +23,7 @@ const CartHeader = ({shoppingListItems, emptyShoppingCart}) =>{
                     :
                         <span 
                             className="shopping-cart-message" 
-                            style={{color: "rgba(10, 58, 114, 0.466)"}}
+                            
                         >
                             Your cart is empty!
                         </span>

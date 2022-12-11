@@ -2,14 +2,11 @@ import React from 'react'
 import ListItem from './ListItem'
 
 const List = ({grocery, handleClickGroceryItem, className,showQuantities}) => {
-    // console.log('props object in List: ', props)
-    // console.log('grocery object in List: ', grocery)
     return(
         <>
             {   
-
                 <ListItem 
-                    key={grocery.id} 
+                    key={grocery.id+1} 
                     grocery={grocery}
                     showQuantities={showQuantities}
                     handleClickGroceryItem={handleClickGroceryItem}
@@ -18,7 +15,6 @@ const List = ({grocery, handleClickGroceryItem, className,showQuantities}) => {
                         <span>Amount: {grocery.amount}</span>: ''}
                 />
             }
-            
         </>
     );
 }

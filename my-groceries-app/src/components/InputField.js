@@ -1,13 +1,11 @@
 import React, {Component} from 'react'
 
-
 class InputField extends Component{
     constructor(){
         super()
         this.state = {
             userInput: ""
         }
-
         this.handleOnInputChange = this.handleOnInputChange.bind(this)
     }
 
@@ -16,7 +14,7 @@ class InputField extends Component{
       }
 
     render() {
-        return(
+        return (
             <div className='search-field-wrapper'>
                 <input 
                     type="text"

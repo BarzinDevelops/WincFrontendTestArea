@@ -9,9 +9,8 @@ const GroceryHeader = () =>{
                 alt="grocery bag"
             />
             <h1 className="shopping-list-title">
-                Grocery list🗒️
-            </h1>
-            
+                Grocery list
+            </h1>            
         </div>
     )
 }
