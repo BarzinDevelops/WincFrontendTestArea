@@ -37,7 +37,7 @@ this.setState(()=>{
   return {shoppingListItems: updatedShoppingListItems}
 })
 
-            console.log('updatedShoppingListItems', updatedShoppingListItems)
+            // console.log('updatedShoppingListItems', updatedShoppingListItems)
   }
 
   handleClickGroceryItem = (somePram) =>  {
@@ -95,6 +95,7 @@ this.setState(()=>{
           {
             <GroceryList
             key={this.state.groceryItems.length+1}
+            // usedKey={key}
             currentGroceries={this.state.groceryItems}
             handleClickGroceryItem={this.handleClickGroceryItem}
             handleUserInput={this.handleUserInput}
@@ -107,7 +108,7 @@ this.setState(()=>{
         <div className="ShoppingCart-wrapper">
             {
               <ShoppingCart
-                key={this.state.shoppingListItems.id}
+                key={this.state.shoppingListItems.length+1}
                 shoppingListItems={this.state.shoppingListItems}
                 emptyShoppingCart={this.emptyShoppingCart}
               />

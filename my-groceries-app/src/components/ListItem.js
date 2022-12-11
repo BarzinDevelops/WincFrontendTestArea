@@ -11,7 +11,7 @@ const ListItem = ({ handleClickGroceryItem,
 
     return(
         <li
-            key={grocery.id}
+            // key={grocery.id}
             className={className}
             onClick={()=>!showQuantities && handleClickGroceryItem(grocery)}
             value={grocery.title}

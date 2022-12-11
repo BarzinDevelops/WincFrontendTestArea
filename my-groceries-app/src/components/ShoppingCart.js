@@ -10,6 +10,7 @@ const ShoppingCart = ({shoppingListItems, emptyShoppingCart}) =>{
         
         <>
             <CartHeader 
+                key={shoppingListItems.length+1}
                 shoppingListItems={shoppingListItems} 
                 emptyShoppingCart={emptyShoppingCart}
             />

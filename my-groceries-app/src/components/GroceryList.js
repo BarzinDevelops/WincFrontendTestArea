@@ -6,9 +6,11 @@ import InputField from "./InputField";
 
 const GroceryList = (props) => {
     // console.log('props.item in GroceryList: ',props)
+    console.log('props =>', props)
+    console.log('props.currentGroceries =>', props.currentGroceries)
   return (
     
-    <>
+    <div className="grocery-header">
         <GroceryHeader />
         <InputField 
             key={props.currentGroceries.length+1}
@@ -32,7 +34,7 @@ const GroceryList = (props) => {
                 }
             
         </div>
-    </>
+    </div>
 
   );
 };
